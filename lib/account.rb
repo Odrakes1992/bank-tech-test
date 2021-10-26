@@ -10,11 +10,21 @@ class Account
 
 
   def deposit(monies)
-    @balance += monies
+    if monies.is_a? String 
+      integer = monies.to_i
+      @balance += integer
+    else 
+      @balance += monies
+    end
   end
 
   def withdraw(monies)
-    @balance -= monies
+    if monies.is_a? String 
+      integer = monies.to_i
+      @balance -= integer
+    else
+      @balance -= monies
+    end
   end 
 
 end 
