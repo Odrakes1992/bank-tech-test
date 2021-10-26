@@ -28,13 +28,14 @@ describe Account do
     end 
 
     it 'should show error if withdrawal/deposit is not numerical string or integer' do 
-
+      message = "You have entered an incorrect key, how about we try again"
+      expect{subject.deposit("eryt")}.to raise_error(message)
     end 
 
-    it 'should not allow negative inputs' do 
-
+    it 'should not allow negative inputs for withdrawals' do 
+      message = "Please try again and use a positive number"
+      expect{subject.deposit("-400")}.to raise_error(message)
     end 
-
   end 
 
 end 

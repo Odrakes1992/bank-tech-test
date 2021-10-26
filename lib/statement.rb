@@ -5,7 +5,6 @@ class Statement
 
   def initialize 
     @transactions = []
-
   end 
 
 end 
