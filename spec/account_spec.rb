@@ -20,14 +20,21 @@ describe Account do
   end 
 
 
-  describe 'test for edge cases / errors ' do 
+  describe 'test for edge cases / errors' do 
     it 'should accept string as entries' do 
       subject.deposit("1000")
       subject.withdraw("800")
       expect(subject.show_balance).to eq 200
     end 
 
-    it 'should show error if withdrawal/deposit is not numerical string or integer'
+    it 'should show error if withdrawal/deposit is not numerical string or integer' do 
+
+    end 
+
+    it 'should not allow negative inputs' do 
+
+    end 
+
   end 
 
 end 
