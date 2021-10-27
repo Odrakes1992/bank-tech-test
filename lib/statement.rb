@@ -1,6 +1,6 @@
 class Statement 
   
-  attr_reader :transactions
+  #attr_reader :transactions
  
   HEADER  =  "date || credit || debit || balance\n"
 

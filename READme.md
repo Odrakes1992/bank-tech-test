@@ -37,6 +37,51 @@ date || credit || debit || balance
 Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
 
 
+
+# Installation instructions 
+
+- clone repo 
+
+```
+https://github.com/Odrakes1992/bank-tech-test.git
+```
+- install dependencies
+
+```
+cd bank-tech-test
+bundle install
+```
+
+- run the full test suite 
+```
+rspec
+```
+
+# Instructions for use 
+
+Initiate IRB 
+
+Load the file `./lib/account` and create a new Account class
+
+```
+3.0.0 :001 > require './lib/account'
+ => true
+3.0.0 :002 > account = Account.new
+ =>
+#<Account:0x00007ff444169348
+  @balance=0, @statement=#<Statement:0x00007...  
+```
+
+```
+3.0.0 :003 > account.deposit(100)
+3.0.0 :004 > account.deposit(90000)
+3.0.0 :005 > account.print_statement
+date || credit || debit || balance
+27-10-2021 || 90000.00 || || 90100.00
+27-10-2021 || 100.00 || || 100.00
+```
+
+
 # User stories 
 
 ```

@@ -24,6 +24,9 @@ class Account
     @statement.debit_transaction(monies,@balance)
   end 
 
+  def print_statement
+    @statement.print_statement
+  end 
 
   private 
 
