@@ -1,7 +1,5 @@
 require './lib/statement'
 
-attr_reader :statement
-
 class Account 
 
   def initialize
@@ -15,17 +13,30 @@ class Account
 
 
   def deposit(monies)
-    fail "You have not entered any integers, how about we try again" if monies.is_a? String
-      @balance += monies
-      @statement.credit_transaction(monies,@balance)
+    is_a_string(monies)
+    @balance += monies
+    @statement.credit_transaction(monies,@balance)
   end
 
   def withdraw(monies)
-    fail "You have not entered any integers, how about we try again" if monies.is_a? String
-    fail "Please try again and use a positive number" if monies < 0   
-      @balance -= monies
-      @statement.debit_transaction(monies,@balance)
+    is_a_string(monies) || is_a_negative_number(monies) || not_enough_funds(monies) 
+    @balance -= monies
+    @statement.debit_transaction(monies,@balance)
   end 
 
+
+  private 
+
+  def is_a_string(input)
+    fail "You have not entered any integers, how about we try again" if input.is_a? String
+  end 
+
+  def is_a_negative_number(input)
+    fail "Please try again and use a positive number" if input < 0  
+  end
+
+  def not_enough_funds(input)
+    fail "Unfortunately you only have #{show_balance} in your account" if input > @balance
+  end
 
 end 
