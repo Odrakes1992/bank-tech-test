@@ -10,28 +10,15 @@ class Account
 
 
   def deposit(monies)
-    fail "You have entered an incorrect key, how about we try again" if contains_letters(monies)
-      integer = monies.to_i
-      @balance += integer
+    fail "You have not entered any integers, how about we try again" if !monies.is_a? Integer
+      @balance += monies
   end
 
   def withdraw(monies)
-    fail "You have entered an incorrect key, how about we try again" if contains_letters(monies)
-      integer = monies.to_i
-      @balance -= integer
+    fail "You have not entered any integers, how about we try again" if !monies.is_a? Integer
+    fail "Please try again and use a positive number" if monies < 0   
+      @balance -= monies
   end 
 
-  private 
-  
-
-  def contains_letters(input)
-    if input.is_a? Integer 
-      return false 
-    else 
-      lowercase = ('a'..'z')
-      uppercase = ('A'..'Z')
-      input.each_char.any?{ |char| lowercase.cover?(char) || uppercase.cover?(char) }
-    end
-  end 
 
 end 

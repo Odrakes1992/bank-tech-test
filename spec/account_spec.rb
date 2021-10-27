@@ -21,20 +21,19 @@ describe Account do
 
 
   describe 'test for edge cases / errors' do 
-    it 'should accept string as entries' do 
-      subject.deposit("1000")
-      subject.withdraw("800")
-      expect(subject.show_balance).to eq 200
-    end 
 
-    it 'should show error if withdrawal/deposit is not numerical string or integer' do 
-      message = "You have entered an incorrect key, how about we try again"
+    it 'should show error if withdrawal/deposit is not an integer' do 
+      message = "You have not entered any integers, how about we try again"
       expect{subject.deposit("eryt")}.to raise_error(message)
     end 
 
     it 'should not allow negative inputs for withdrawals' do 
       message = "Please try again and use a positive number"
-      expect{subject.deposit("-400")}.to raise_error(message)
+      expect{subject.withdraw(-500)}.to raise_error(message)
+    end 
+
+    it 'should not allow to withdraw if funds will go below zero' do 
+
     end 
   end 
 
