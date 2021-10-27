@@ -1,4 +1,5 @@
 require './lib/statement'
+require './lib/printer'
 
 class Account 
 
@@ -25,7 +26,8 @@ class Account
   end 
 
   def print_statement
-    @statement.print_statement
+    print = Printer.new
+    print.full_statement(@statement.transactions)
   end 
 
   private 

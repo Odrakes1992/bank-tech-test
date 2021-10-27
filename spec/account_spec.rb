@@ -36,7 +36,6 @@ describe Account do
       subject.deposit(100)
       message = "Unfortunately you only have #{subject.show_balance} in your account"
       expect{subject.withdraw(200)}.to raise_error(message)
-
     end 
   end 
 
