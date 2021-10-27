@@ -18,6 +18,8 @@ class Statement
   def debit_transaction(amount,balance)
     transaction = "#{@current_time} || || #{format_transaction(amount)} || #{format_transaction(balance)}"
     @transactions << transaction
+
+    
   end 
 
   private 
