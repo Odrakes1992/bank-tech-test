@@ -22,7 +22,7 @@ describe Account do
 
   describe 'test for edge cases / errors' do 
 
-    it 'should show error if withdrawal/deposit is not an integer' do 
+    it 'should show error if withdrawal/deposit is not an integer/float' do 
       message = "You have not entered any integers, how about we try again"
       expect{subject.deposit("eryt")}.to raise_error(message)
     end 

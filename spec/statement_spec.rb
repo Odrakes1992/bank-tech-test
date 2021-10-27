@@ -4,14 +4,14 @@ describe Statement do
 
   let (:today) {Time.now.strftime("%d-%m-%Y")}
 
-  # it 'starts with no transactions ' do 
-  #   expect(subject.transactions).to be_empty
-  # end 
+  it 'starts with no transactions ' do 
+    expect(subject.transactions).to be_empty
+  end 
 
-  # it 'records deposit transactions' do 
-  #   subject.deposit_transaction(50,50)
-  #   expect(subject.transactions[0]).to eq("#{:today} || 50.00 || || 50.00")
-  # end 
+  it 'records deposit transactions' do 
+    subject.deposit_transaction(50,50)
+    expect(subject.transactions[0]).to eq("#{today} || 50.00 || || 50.00")
+  end 
 
 
 end 
